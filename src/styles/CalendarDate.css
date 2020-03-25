@@ -1,0 +1,37 @@
+.calendarDate {
+    flex: 0 1 auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 0.5em 1em;
+
+    border-radius: 4px;
+    border: 2px solid #F8F9FA;
+
+    background: #F8F9FA;
+    margin: 0 5px 5px 0;
+    min-width: 3.5em;
+
+    font-weight: 600;
+    color: #BABCBF;
+}
+
+.calendarDate.available {
+    background: #ECEEF2;
+    border-color: #ECEEF2;
+    cursor: pointer;
+    color: #394148;
+}
+
+.calendarDate.available:hover {
+    border-color: #5A5DEA;
+    color: #5A5DEA;
+}
+
+.calendarDate .date {
+
+}
+
+.calendarDate .dateOrdinal {
+    font-size: 0.7em;
+}

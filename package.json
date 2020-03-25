@@ -6,11 +6,16 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "classnames": "^2.2.6",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "luxon": "^1.22.0",
+    "prop-types": "^15.7.2",
     "ramda": "^0.27.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1"
   },
   "scripts": {
@@ -34,5 +39,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8080"
+  "proxy": "http://localhost:8080",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }

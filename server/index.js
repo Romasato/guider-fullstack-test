@@ -1,8 +1,11 @@
+const cors = require('cors');
+
 var {generateOffice365Schedule} = require('./utils/schedule');
 var {now} = require('./utils/dateHelper');
 
 var express = require('express');
 var app = express();
+app.use(cors());
 var port = 8080;
 
 app.get('/api/availability', function(req, res) {
@@ -10,9 +13,20 @@ app.get('/api/availability', function(req, res) {
     // STEP 1 use a mock response and display on the client
     const response = generateMockUpResponse();
 
-    // STEP 2 generate real data and convert to expected format
-    // const data = generateOffice365Schedule(startDate, endDate)
     return res.send(response);
+});
+
+/**
+ * Dummy test of the office365 data
+ */
+app.get('/api/availability/office365', function(req, res) {
+
+    // STEP 2 generate real data and convert to expected format
+    const startDate = now().set({hour: 10});
+    const endDate = startDate.plus({hours: 1, days: 7});
+
+    const data = generateOffice365Schedule(startDate, endDate)
+    return res.send(data);
 });
 
 function generateMockUpResponse() {

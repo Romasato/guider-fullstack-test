@@ -1,0 +1,28 @@
+.timeSlots {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top:  10px;
+    max-width: 80vw;
+}
+
+.timeSlot {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #000000;
+    color: #394148;
+    margin-left: 5px;
+
+    opacity: 0.2;
+}
+
+.timeSlot.available {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.timeSlot.available:hover {
+    border-color: #5A5DEA;
+    background: #5A5DEA;
+    color: white;
+}

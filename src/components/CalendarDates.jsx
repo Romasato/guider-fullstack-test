@@ -11,6 +11,7 @@ class CalendarDates extends React.Component {
         userTimeZone: PropTypes.object,
         dateStart: PropTypes.instanceOf(DateTime),
         dateEnd: PropTypes.instanceOf(DateTime),
+        selectedDate: PropTypes.instanceOf(DateTime),
         availableDates: PropTypes.arrayOf(PropTypes.instanceOf(DateTime)),
         onDateSelect: PropTypes.func
     };
@@ -29,7 +30,7 @@ class CalendarDates extends React.Component {
     };
 
     render() {
-        const {dateStart, dateEnd, availableDates, onDateSelect} = this.props;
+        const {dateStart, dateEnd, availableDates, onDateSelect, selectedDate} = this.props;
         const datesArr = this.generateDates(dateStart, dateEnd, availableDates);
 
         return (
@@ -40,6 +41,7 @@ class CalendarDates extends React.Component {
                         showMonth={idx === 0 || date.day === 1}
                         date={date}
                         isAvailable={hasAvailability}
+                        isSelected={selectedDate && selectedDate.hasSame(date, 'day')}
                         onClick={onDateSelect}
                     />
                 ))}

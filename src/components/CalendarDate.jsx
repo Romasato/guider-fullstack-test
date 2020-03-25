@@ -10,7 +10,8 @@ class CalendarDate extends React.Component {
     static propTypes = {
         date: PropTypes.instanceOf(DateTime),
         isAvailable: PropTypes.bool,
-        showMonth: PropTypes.bool
+        showMonth: PropTypes.bool,
+        isSelected: PropTypes.bool
     };
 
     static defaultProps = {
@@ -41,12 +42,13 @@ class CalendarDate extends React.Component {
     };
 
     render() {
-        const {date, isAvailable, showMonth} = this.props;
+        const {date, isAvailable, showMonth, isSelected} = this.props;
         const dateSuffix = this.getOrdinalSuffixForNum(date.day);
 
         return (
             <div className={classnames('calendarDate', {
-                available: isAvailable
+                available: isAvailable,
+                selected: isSelected
             })}
                 onClick={this.onClick}
             >

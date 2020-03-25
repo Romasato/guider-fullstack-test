@@ -96,6 +96,7 @@ class AvailabilityCalendar extends React.Component {
                     dateEnd={dtEnd}
                     availableDates={availableDates}
                     onDateSelect={this.onDateSelect}
+                    selectedDate={selectedDate}
                 />
                 {availableSlots && (
                     <TimeSlots

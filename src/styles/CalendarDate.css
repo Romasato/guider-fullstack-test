@@ -23,7 +23,8 @@
     color: #394148;
 }
 
-.calendarDate.available:hover {
+.calendarDate.available:hover,
+.calendarDate.available.selected {
     border-color: #5A5DEA;
     color: #5A5DEA;
 }

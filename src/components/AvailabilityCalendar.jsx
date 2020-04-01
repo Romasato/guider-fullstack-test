@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import {DateTime} from 'luxon';
 
-import {api} from '../config/envSettings';
+import {api} from '../../config/envSettings';
 
 import {UserTimezone} from './UserTimezone';
 import {CalendarDates} from './CalendarDates';

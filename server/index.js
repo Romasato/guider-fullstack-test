@@ -1,6 +1,7 @@
 const cors = require('cors');
 
 var {generateOffice365Schedule} = require('./utils/schedule');
+const {transformMSOffice365Res} = require('./utils/transformMSOffice365Res');
 var {now} = require('./utils/dateHelper');
 
 var express = require('express');
@@ -25,9 +26,12 @@ app.get('/api/availability/office365', function(req, res) {
     const startDate = now().set({hour: 10});
     const endDate = startDate.plus({hours: 1, days: 7});
 
-    const data = generateOffice365Schedule(startDate, endDate)
-    return res.send(data);
+    const dataMSOffice = generateOffice365Schedule(startDate, endDate);
+    const dataTransformed = transformMSOffice365Res(startDate, endDate, dataMSOffice);
+
+    return res.send(dataTransformed);
 });
+
 
 function generateMockUpResponse() {
     const d1 = now().set({hour: 10});
